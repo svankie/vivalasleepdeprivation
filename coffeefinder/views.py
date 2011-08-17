@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.http import HttpResponse
-from django.template import Context, loader
+from django.template import Context, loader, RequestContext
 
 from coffeefinder.models import CoffeeShop
 
@@ -9,7 +9,7 @@ from coffeefinder.models import CoffeeShop
 def index(request):
     coffee_shops = CoffeeShop.objects.all()
     sleek_template = loader.get_template('coffeefinder/index.html')
-    context = Context({"coffee_shops": coffee_shops})
+    context = RequestContext(request, {"coffee_shops": coffee_shops})
     return HttpResponse(sleek_template.render(context))
 
 
