@@ -9,7 +9,7 @@
 <body>
   <div id="box">
     <div id="header">
-      <h3>Do you <span class="love">love coffee</span>, as much as <span class="self">I</span> do?</h3>
+      <h3>Do you just <span class="love">love coffee</span>, as much as <span class="self">I</span> do?</h3>
       <h2>Are you often <span class="possession">possessed</span> by the spirit of an ancient Ethiopian dancing goat?</h2>
       <h1>
         Are you holding a <span class="gi">cup of joe</span> <i>right this minute</i>,
@@ -18,18 +18,18 @@
       <p class="shy">
         So, you're a <span class="loner">loner</span>.
         You enjoy <span class="night">nightwalking</span> and crawling into
-        <span class="ghetto">dark, hostile, ghetto cafeterias</span>.
+        dark, hostile, <span class="ghetto">ghetto</span> cafeterias.
         Something like that.
       </p>
     </div>
     <div id="explanation">
       <p>
         This is your <strong>metaplace</strong>.
-        Here you can find all the 24/7 coffeeshops in Buenos Aires that <strong>I've been to</strong>.
-        Fabulous.
+        Here you can find all the 24/7 coffeeshops in Buenos Aires that <strong>I've been to</strong>. <br/>
+        Fabulous. You can <strong><a href="#" class="show-popup">add one, too</a></strong>.
       </p>
       <p>
-        <br/>Among other -future - things, they're listed with this information:
+        Among other --future-- things, they're listed with this information:
         <ul class="meta">
           <li>If they have any available <strong>plugs</strong> for your laptop/cellphone/whatever.</li>
           <li>If they have <strong>free WiFi</strong> connection.</li>
@@ -40,24 +40,25 @@
       </p>
     </div>
     <div id="showroom">
-      <h1><a href="#" class="show-coffeshops">SHOW'EM</a><h1>
       {% if coffee_shops %}
-      <table id="coffeeshops">
+      <table align="center" id="coffeeshops">
         <thead>
           <th>Coffee Store</th>
+          <th>Address</th>
           <th>WiFi availability</th>
           <th>A/C plugs availability</th>
           <th>Credit/Debit availability</th>
-          <th>Berserk-mode availability</th>
+          <th>Berserk-mode enabled</th>
         </thead>
         <tbody>
           {% for cs in coffee_shops %}
           <tr>
-            <td><a href="/coffeeshops/{{cs.id}}/">{{cs.name}}</a>/td>
-            <td>{{cs.wifi}}</td>
-            <td>{{cs.plugs}}</td>
-            <td>{{cs.plastic}}</td>
-            <td>{{cs.berserk_mode}}</td>
+            <td><a href="/coffeeshops/{{cs.id}}/">{{cs.name}}</a></td>
+            {% if cs.address %}<td>{{cs.address}}</td>{% else %}<td>No address yet.</td>{% endif %}
+            {% if cs.wifi %}<td>Yes</td>{% else %}<td>No</td>{% endif %}
+            {% if cs.plugs %}<td>Yes</td>{% else %}<td>No</td>{% endif %}
+            {% if cs.plastic%}<td>Yes</td>{% else %}<td>No</td>{% endif %}
+            {% if cs.berserk_mode %}<td>Yes</td>{% else %}<td>No</td>{% endif %}
           </tr>
           {% endfor %}
         </tbody>
@@ -67,8 +68,65 @@
       {% endif %}
     </div>
   </div>
-  <div id="footer">
-    <p>Built by Horacio Bertorello.</p>
+  <div align="center" id="pop-up" class="add-cs">
+    <form id="add-cs" action="/add" method="post">
+      <table align="center">
+        <tbody>
+          <tr>
+            <td>Name: </td><td><input type="text" name="name" /></td>
+          </tr>
+          <tr>
+            <td>Address</td><td><input type="text" name="address" /></td>
+          </tr>
+          <tr>
+            <td>Is there WiFi available?</td>
+            <td>
+              <select id="wifi">
+                <option value='true' selected="selected">Yes</option>
+                <option value='false'>No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Is there WiFi available?</td>
+            <td>
+              <select id="wifi">
+                <option value='true' selected="selected">Yes</option>
+                <option value='false'>No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Are there any A/C plugs?</td>
+            <td>
+              <select id="plugs">
+                <option value='true' selected="selected">Yes</option>
+                <option value='false'>No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Are credit/debit cards accepted?</td>
+            <td>
+              <select id="plastic">
+                <option value='true' selected="selected">Yes</option>
+                <option value='false'>No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Are the waiters ready to <i>eviscerate</i> you?</td>
+            <td>
+              <select id="berserk_mode">
+                <option value='true' selected="selected">Yes</option>
+                <option value='false'>No</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><input type="submit" value="Add it!"> or <a href="#" class="cancel-cs">cancel</a>.</p>
+    </form>
   </div>
 </body>
 </html>

@@ -1,14 +1,21 @@
 /** are computers ever become... <i>volitional</i>? */
 
-$(".show-coffeshops").live('click', function(ev) {
-    ev.preventDefault();
+$(".show-popup").live('click', function(ev) {
     ev.stopPropagation();
-    var el = $(this);
-    if (el.html() == "SHOW'EM") {
-        $("#coffeeshops").show();
-        $(el).html("HIDE'EM");
-    } else {
-        $("#coffeeshops").hide();
-        $(el).html("SHOW'EM");
-    }
+    ev.preventDefault();
+    $("#box").fadeOut();
+    $("#pop-up").fadeIn();
+});
+
+$(".cancel-cs").live('click', function(ev) {
+    ev.stopPropagation();
+    ev.preventDefault();
+    $("#pop-up").fadeOut();
+    $("#box").fadeIn();
+});
+
+$("#add-cs").live('submit', function(ev) {
+    ev.stopPropagation();
+    ev.preventDefault();
+    debugger;
 });

@@ -1,11 +1,12 @@
 /** commons. */
 
-* {
+html, body {
+    padding: 5px;
     margin: 0 auto;
 }
 
-body {
-    padding: 15px;
+h1, h2, h3 {
+    margin: 5px auto;
 }
 
 #header > * {
@@ -13,7 +14,7 @@ body {
 }
 
 #content {
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .meta > li {
@@ -22,21 +23,19 @@ body {
 
 #showroom {
     text-align: center;
-    margin: 30px auto;
+    margin: 20px auto;
 }
 
-#showroom a {
-    text-decoration: none;
-}
-
-#coffeeshops {
+#pop-up {
+    padding: 10px;
+    border: 5px solid green;
     display: none;
+    height: 250px;
+    width: 450px;
 }
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
+form > p {
+    margin: 15px auto;
+    text-align: center;
 }
 
 span {
@@ -53,5 +52,7 @@ span {
 .night { border: 2px solid grey; }
 .loner { border: 2px solid purple; }
 .ghetto { border: 2px solid crimson; }
+
+.warning { font-color: red; }
 
 .shy { margin: 10px auto; padding: 15px; font-size: 1em; }

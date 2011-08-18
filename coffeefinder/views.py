@@ -12,9 +12,7 @@ def index(request):
     context = RequestContext(request, {"coffee_shops": coffee_shops})
     return HttpResponse(sleek_template.render(context))
 
-
-def detail(request, coffeeshop_id):
-    cs = CoffeeShop.objects.filter(id=coffeeshop_id)
-    tiny_sleek_template = loader.get_template('coffeefinder/detail.html')
-    context = RequestContext(request, {"coffee_shop": cs})
-    return HttpResponse(tiny_sleek_template.render(context))
+def add(request):
+    import ipdb; ipdb.set_trace()
+    values = request.POST
+    return HttpResponse("Bummer.")
