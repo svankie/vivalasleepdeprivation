@@ -1,0 +1,63 @@
+/** commons. */
+
+html, body {
+    padding: 5px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    margin: 5px auto;
+}
+
+#header > * {
+    text-align: center;
+}
+
+#content {
+    margin: 10px auto;
+}
+
+.meta > li {
+    list-style-type: upper-roman;
+}
+
+#showroom {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#pop-up {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    padding: 10px;
+    background-color: white;
+    border: 5px solid black;
+    display: none;
+    height: 225px;
+    width: 450px;
+}
+form > p {
+    margin: 15px auto;
+    text-align: center;
+}
+
+span {
+    padding: 2px 2px;
+}
+
+/** bunch of crap.  */
+
+.love { border: 2px solid red; }
+.self { border: 2px solid blue; }
+.possession { border: 2px solid green; }
+.gi { border: 2px solid yellow; }
+.sexy { border: 2px solid pink; }
+.night { border: 2px solid grey; }
+.loner { border: 2px solid purple; }
+.ghetto { border: 2px solid crimson; }
+
+.warning { font-color: red; }
+
+.shy { margin: 10px auto; padding: 15px; font-size: 1em; }

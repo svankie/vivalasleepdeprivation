@@ -24,4 +24,4 @@ def add(request):
             obj[attr] = bool(value)
     cs = CoffeeShop(**obj)
     cs.save()
-    return redirect('index') #XXX: ViewDoesNotExist. WTF.
+    return redirect('http://svankie.alwaysdata.net/coffeeshops/')

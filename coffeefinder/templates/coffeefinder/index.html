@@ -53,7 +53,7 @@
         <tbody>
           {% for cs in coffee_shops %}
           <tr>
-            <td><a href="/coffeeshops/{{cs.id}}/">{{cs.name}}</a></td>
+            <td><a class="detail" href="/coffeeshops/{{cs.id}}/">{{cs.name}}</a></td>
             {% if cs.address %}<td>{{cs.address}}</td>{% else %}<td>No address yet.</td>{% endif %}
             {% if cs.wifi %}<td>Yes</td>{% else %}<td>No</td>{% endif %}
             {% if cs.plugs %}<td>Yes</td>{% else %}<td>No</td>{% endif %}
