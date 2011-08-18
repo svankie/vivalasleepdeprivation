@@ -41,10 +41,30 @@
     </div>
     <div id="showroom">
       <h1><a href="#" class="show-coffeshops">SHOW'EM</a><h1>
+      {% if coffee_shops %}
       <table id="coffeeshops">
-        <!-- coso -->
-        <tr><td>Epa.</td></tr>
+        <thead>
+          <th>Coffee Store</th>
+          <th>WiFi availability</th>
+          <th>A/C plugs availability</th>
+          <th>Credit/Debit availability</th>
+          <th>Berserk-mode availability</th>
+        </thead>
+        <tbody>
+          {% for cs in coffee_shops %}
+          <tr>
+            <td><a href="/coffeeshops/{{cs.id}}/">{{cs.name}}</a>/td>
+            <td>{{cs.wifi}}</td>
+            <td>{{cs.plugs}}</td>
+            <td>{{cs.plastic}}</td>
+            <td>{{cs.berserk_mode}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
       </table>
+      {% else %}
+      <p>No coffeeshops YET, mate.</p>
+      {% endif %}
     </div>
   </div>
   <div id="footer">
