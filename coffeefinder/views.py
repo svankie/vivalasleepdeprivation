@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from django.http import HttpResponse
-from django.template import Context, loader, RequestContext
+from django.template import loader, RequestContext
+from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_exempt
 
 from coffeefinder.models import CoffeeShop
 
@@ -12,7 +14,14 @@ def index(request):
     context = RequestContext(request, {"coffee_shops": coffee_shops})
     return HttpResponse(sleek_template.render(context))
 
+
+@csrf_exempt
 def add(request):
-    import ipdb; ipdb.set_trace()
-    values = request.POST
-    return HttpResponse("Bummer.")
+    bkeys = (u'wifi', u'plugs', u'plastic', u'berserk_mode')
+    obj = dict(request.POST.items())
+    for attr, value in obj.items():
+        if attr in bkeys:
+            obj[attr] = bool(value)
+    cs = CoffeeShop(**obj)
+    cs.save()
+    return redirect('index') #XXX: ViewDoesNotExist. WTF.

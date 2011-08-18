@@ -68,24 +68,15 @@
       {% endif %}
     </div>
   </div>
-  <div align="center" id="pop-up" class="add-cs">
+  <div id="pop-up" class="add-cs" align="center">
     <form id="add-cs" action="/add" method="post">
       <table align="center">
         <tbody>
           <tr>
-            <td>Name: </td><td><input type="text" name="name" /></td>
+            <td>Name: </td><td><input type="text" id="name" name="name" /></td>
           </tr>
           <tr>
-            <td>Address</td><td><input type="text" name="address" /></td>
-          </tr>
-          <tr>
-            <td>Is there WiFi available?</td>
-            <td>
-              <select id="wifi">
-                <option value='true' selected="selected">Yes</option>
-                <option value='false'>No</option>
-              </select>
-            </td>
+            <td>Address</td><td><input type="text" id="address" name="address" /></td>
           </tr>
           <tr>
             <td>Is there WiFi available?</td>
