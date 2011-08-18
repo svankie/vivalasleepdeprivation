@@ -1,0 +1,57 @@
+/** commons. */
+
+* {
+    margin: 0 auto;
+}
+
+body {
+    padding: 15px;
+}
+
+#header > * {
+    text-align: center;
+}
+
+#content {
+    margin: 20px auto;
+}
+
+.meta > li {
+    list-style-type: upper-roman;
+}
+
+#showroom {
+    text-align: center;
+    margin: 30px auto;
+}
+
+#showroom a {
+    text-decoration: none;
+}
+
+#coffeeshops {
+    display: none;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+}
+
+span {
+    padding: 2px 2px;
+}
+
+/** bunch of crap.  */
+
+.love { border: 2px solid red; }
+.self { border: 2px solid blue; }
+.possession { border: 2px solid green; }
+.gi { border: 2px solid yellow; }
+.sexy { border: 2px solid pink; }
+.night { border: 2px solid grey; }
+.loner { border: 2px solid purple; }
+.ghetto { border: 2px solid crimson; }
+
+.shy { margin: 10px auto; padding: 15px; font-size: 1em; }

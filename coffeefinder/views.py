@@ -14,4 +14,7 @@ def index(request):
 
 
 def detail(request, coffeeshop_id):
-    return HttpResponse("Ayyyyyyyyyy!")
+    cs = CoffeeShop.objects.filter(id=coffeeshop_id)
+    tiny_sleek_template = loader.get_template('coffeefinder/detail.html')
+    context = RequestContext(request, {"coffee_shop": cs})
+    return HttpResponse(tiny_sleek_template.render(context))

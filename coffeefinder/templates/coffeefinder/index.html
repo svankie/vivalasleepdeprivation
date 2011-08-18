@@ -1,11 +1,54 @@
-<p><a href="{{STATIC_URL}}style.css"><a></p>
-
-{% if coffee_shops %}
-<ul>
-  {% for cs in coffee_shops %}
-    <li><a href="/coffeeshops/{{cs.id}}/">{{cs.name}}</a></li>
-  {% endfor %}
-<ul>
-{% else %}
-  <p>No coffeeshops TODAY, mate.</p>
-{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CoffeeFinder</title>
+  <link rel="stylesheet" href="{{STATIC_URL}}style.css" type="text/css" />
+  <script type="text/javascript" src="{{STATIC_URL}}lib/jquery-1.5.2.min.js"></script>
+  <script type="text/javascript" src="{{STATIC_URL}}misbehavior.js"></script>
+</head>
+<body>
+  <div id="box">
+    <div id="header">
+      <h3>Do you <span class="love">love coffee</span>, as much as <span class="self">I</span> do?</h3>
+      <h2>Are you often <span class="possession">possessed</span> by the spirit of an ancient Ethiopian dancing goat?</h2>
+      <h1>
+        Are you holding a <span class="gi">cup of joe</span> <i>right this minute</i>,
+        you <span class="sexy">sexy individual</span>?
+      </h1>
+      <p class="shy">
+        So, you're a <span class="loner">loner</span>.
+        You enjoy <span class="night">nightwalking</span> and crawling into
+        <span class="ghetto">dark, hostile, ghetto cafeterias</span>.
+        Something like that.
+      </p>
+    </div>
+    <div id="explanation">
+      <p>
+        This is your <strong>metaplace</strong>.
+        Here you can find all the 24/7 coffeeshops in Buenos Aires that <strong>I've been to</strong>.
+        Fabulous.
+      </p>
+      <p>
+        <br/>Among other -future - things, they're listed with this information:
+        <ul class="meta">
+          <li>If they have any available <strong>plugs</strong> for your laptop/cellphone/whatever.</li>
+          <li>If they have <strong>free WiFi</strong> connection.</li>
+          <li>If they accept <strong>plastic</strong> (credit or debit cards).</li>
+          <li>If they <strong>go berserk</strong> after seeing you sitting there for more than 5 hours sipping <br/>
+            the same pale, little cup of coffee they served you the minute you walked in.</li>
+        </ul>
+      </p>
+    </div>
+    <div id="showroom">
+      <h1><a href="#" class="show-coffeshops">SHOW'EM</a><h1>
+      <table id="coffeeshops">
+        <!-- coso -->
+        <tr><td>Epa.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Built by Horacio Bertorello.</p>
+  </div>
+</body>
+</html>
