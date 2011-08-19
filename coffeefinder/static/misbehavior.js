@@ -46,7 +46,7 @@ $("#add-cs").live('submit', function(ev) {
 
 /** h3lp3r5 */
 function extractValues(attrName, input_type, multiple) {
-    if (typeof multiple != 'undefined' && input_type != 'text') {
+    if (input_type == 'select' && typeof multiple != 'undefined') {
         var vector = new Array();
         $.each($('#' + attrName + ' :selected'), function(idx, el) {
             vector.push($(el).val());
